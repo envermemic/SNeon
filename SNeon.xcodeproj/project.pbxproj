@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		F439C0EC234FBA870049366E /* SNeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F439C0E2234FBA860049366E /* SNeon.framework */; };
 		F439C0F1234FBA870049366E /* SNeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439C0F0234FBA870049366E /* SNeonTests.swift */; };
 		F439C0F3234FBA870049366E /* SNeon.h in Headers */ = {isa = PBXBuildFile; fileRef = F439C0E5234FBA860049366E /* SNeon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F439C0FD234FBF340049366E /* SNeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439C0FC234FBF340049366E /* SNeon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		F439C0EB234FBA870049366E /* SNeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F439C0F0234FBA870049366E /* SNeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNeonTests.swift; sourceTree = "<group>"; };
 		F439C0F2234FBA870049366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F439C0FC234FBF340049366E /* SNeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNeon.swift; sourceTree = "<group>"; };
 		FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNeon-SNeonTests.debug.xcconfig"; path = "Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +70,6 @@
 				FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */,
 				5E4C16A003C6F37626FECE7E /* Pods-SNeon-SNeonTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,6 +98,7 @@
 			children = (
 				F439C0E5234FBA860049366E /* SNeon.h */,
 				F439C0E6234FBA860049366E /* Info.plist */,
+				F439C0FC234FBF340049366E /* SNeon.swift */,
 			);
 			path = SNeon;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 				F439C0E7234FBA870049366E /* Sources */,
 				F439C0E8234FBA870049366E /* Frameworks */,
 				F439C0E9234FBA870049366E /* Resources */,
+				446034FDB63BADD00038DF05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +186,7 @@
 				TargetAttributes = {
 					F439C0E1234FBA860049366E = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					F439C0EA234FBA870049366E = {
 						CreatedOnToolsVersion = 11.0;
@@ -226,6 +230,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		446034FDB63BADD00038DF05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5B7457D3D98324ABBD15AEE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F439C0FD234FBF340049366E /* SNeon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E2A38987643610B9203B8F3 /* Pods-SNeon.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
@@ -439,6 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tech387.SNeon;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 93738AA339916998577E26BF /* Pods-SNeon.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
@@ -473,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
 				INFOPLIST_FILE = SNeonTests/Info.plist;
@@ -492,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E4C16A003C6F37626FECE7E /* Pods-SNeon-SNeonTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
 				INFOPLIST_FILE = SNeonTests/Info.plist;
