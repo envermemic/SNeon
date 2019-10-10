@@ -500,7 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
 				INFOPLIST_FILE = SNeonTests/Info.plist;
@@ -520,7 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E4C16A003C6F37626FECE7E /* Pods-SNeon-SNeonTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
 				INFOPLIST_FILE = SNeonTests/Info.plist;
