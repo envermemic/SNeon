@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14F46535D44BE890485C74C2 /* Pods_SNeon_SNeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B195CD168D81D57C748191E5 /* Pods_SNeon_SNeonTests.framework */; };
+		37657384F2C3B1E33841F86B /* Pods_SNeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CC0C215DD7F481A16DE2F3 /* Pods_SNeon.framework */; };
 		F439C0EC234FBA870049366E /* SNeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F439C0E2234FBA860049366E /* SNeon.framework */; };
 		F439C0F1234FBA870049366E /* SNeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439C0F0234FBA870049366E /* SNeonTests.swift */; };
 		F439C0F3234FBA870049366E /* SNeon.h in Headers */ = {isa = PBXBuildFile; fileRef = F439C0E5234FBA860049366E /* SNeon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,12 +25,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E2A38987643610B9203B8F3 /* Pods-SNeon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNeon.debug.xcconfig"; path = "Target Support Files/Pods-SNeon/Pods-SNeon.debug.xcconfig"; sourceTree = "<group>"; };
+		57CC0C215DD7F481A16DE2F3 /* Pods_SNeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4C16A003C6F37626FECE7E /* Pods-SNeon-SNeonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNeon-SNeonTests.release.xcconfig"; path = "Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests.release.xcconfig"; sourceTree = "<group>"; };
+		93738AA339916998577E26BF /* Pods-SNeon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNeon.release.xcconfig"; path = "Target Support Files/Pods-SNeon/Pods-SNeon.release.xcconfig"; sourceTree = "<group>"; };
+		B195CD168D81D57C748191E5 /* Pods_SNeon_SNeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNeon_SNeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F439C0E2234FBA860049366E /* SNeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SNeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F439C0E5234FBA860049366E /* SNeon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNeon.h; sourceTree = "<group>"; };
 		F439C0E6234FBA860049366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F439C0EB234FBA870049366E /* SNeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F439C0F0234FBA870049366E /* SNeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNeonTests.swift; sourceTree = "<group>"; };
 		F439C0F2234FBA870049366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNeon-SNeonTests.debug.xcconfig"; path = "Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37657384F2C3B1E33841F86B /* Pods_SNeon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				F439C0EC234FBA870049366E /* SNeon.framework in Frameworks */,
+				14F46535D44BE890485C74C2 /* Pods_SNeon_SNeonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB4DA0A971608A2AAB0F201E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E2A38987643610B9203B8F3 /* Pods-SNeon.debug.xcconfig */,
+				93738AA339916998577E26BF /* Pods-SNeon.release.xcconfig */,
+				FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */,
+				5E4C16A003C6F37626FECE7E /* Pods-SNeon-SNeonTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F439C0D8234FBA860049366E = {
 			isa = PBXGroup;
 			children = (
 				F439C0E4234FBA860049366E /* SNeon */,
 				F439C0EF234FBA870049366E /* SNeonTests */,
 				F439C0E3234FBA860049366E /* Products */,
+				BB4DA0A971608A2AAB0F201E /* Pods */,
+				F70B531CFEEBC818977D96AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +110,15 @@
 			path = SNeonTests;
 			sourceTree = "<group>";
 		};
+		F70B531CFEEBC818977D96AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57CC0C215DD7F481A16DE2F3 /* Pods_SNeon.framework */,
+				B195CD168D81D57C748191E5 /* Pods_SNeon_SNeonTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F439C0F6234FBA870049366E /* Build configuration list for PBXNativeTarget "SNeon" */;
 			buildPhases = (
+				5B7457D3D98324ABBD15AEE7 /* [CP] Check Pods Manifest.lock */,
 				F439C0DD234FBA860049366E /* Headers */,
 				F439C0DE234FBA860049366E /* Sources */,
 				F439C0DF234FBA860049366E /* Frameworks */,
@@ -122,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F439C0F9234FBA870049366E /* Build configuration list for PBXNativeTarget "SNeonTests" */;
 			buildPhases = (
+				7275AF0E5D41A84E69EAE4F5 /* [CP] Check Pods Manifest.lock */,
 				F439C0E7234FBA870049366E /* Sources */,
 				F439C0E8234FBA870049366E /* Frameworks */,
 				F439C0E9234FBA870049366E /* Resources */,
@@ -189,6 +224,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B7457D3D98324ABBD15AEE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SNeon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7275AF0E5D41A84E69EAE4F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SNeon-SNeonTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F439C0DE234FBA860049366E /* Sources */ = {
@@ -339,6 +421,7 @@
 		};
 		F439C0F7234FBA870049366E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E2A38987643610B9203B8F3 /* Pods-SNeon.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -363,6 +446,7 @@
 		};
 		F439C0F8234FBA870049366E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93738AA339916998577E26BF /* Pods-SNeon.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -387,6 +471,7 @@
 		};
 		F439C0FA234FBA870049366E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
@@ -405,6 +490,7 @@
 		};
 		F439C0FB234FBA870049366E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E4C16A003C6F37626FECE7E /* Pods-SNeon-SNeonTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C4MK6T82C;
