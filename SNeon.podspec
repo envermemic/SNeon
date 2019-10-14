@@ -10,4 +10,5 @@ Pod::Spec.new do |spec|
  spec.platform      = :ios, "12.0"
  spec.source        = { :git => "https://github.com/envermemic/SNeon.git" }
  spec.source_files  = "SNeon"
+ spec.dependency 'Neon'
 end
