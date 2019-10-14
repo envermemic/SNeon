@@ -48,6 +48,16 @@ extension UIView {
         }
     }
     
+    /// postavljam elemenat u ugao
+    ///
+    /// za ne postavljene x and y paddinge koristice se zero
+    /// za neunesen ili width ili height ili ako su zero nactavice koristiti defaultni
+    ///
+    /// - Parameter corner:
+    /// - Parameter xp:
+    /// - Parameter yp:
+    /// - Parameter w:
+    /// - Parameter h:
     func onCorner(_ corner: Corner, xp: CGFloat = 0, yp: CGFloat = 0, w: CGFloat = 0, h: CGFloat = 0) {
         if let superview = superview {
             var xPadding = xp, yPadding = yp

@@ -13,6 +13,7 @@
 		F439C0F1234FBA870049366E /* SNeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439C0F0234FBA870049366E /* SNeonTests.swift */; };
 		F439C0F3234FBA870049366E /* SNeon.h in Headers */ = {isa = PBXBuildFile; fileRef = F439C0E5234FBA860049366E /* SNeon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F439C0FD234FBF340049366E /* SNeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439C0FC234FBF340049366E /* SNeon.swift */; };
+		F4FD0C6C23548AEF002C1B03 /* STagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		F439C0F0234FBA870049366E /* SNeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNeonTests.swift; sourceTree = "<group>"; };
 		F439C0F2234FBA870049366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F439C0FC234FBF340049366E /* SNeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNeon.swift; sourceTree = "<group>"; };
+		F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STagLabel.swift; sourceTree = "<group>"; };
 		FC2E869C92E480B4F4565166 /* Pods-SNeon-SNeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNeon-SNeonTests.debug.xcconfig"; path = "Target Support Files/Pods-SNeon-SNeonTests/Pods-SNeon-SNeonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		F439C0E4234FBA860049366E /* SNeon */ = {
 			isa = PBXGroup;
 			children = (
+				F4FD0C6A23548AB4002C1B03 /* SComponents */,
 				F439C0E5234FBA860049366E /* SNeon.h */,
 				F439C0E6234FBA860049366E /* Info.plist */,
 				F439C0FC234FBF340049366E /* SNeon.swift */,
@@ -110,6 +113,14 @@
 				F439C0F2234FBA870049366E /* Info.plist */,
 			);
 			path = SNeonTests;
+			sourceTree = "<group>";
+		};
+		F4FD0C6A23548AB4002C1B03 /* SComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */,
+			);
+			path = SComponents;
 			sourceTree = "<group>";
 		};
 		F70B531CFEEBC818977D96AF /* Frameworks */ = {
@@ -299,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F439C0FD234FBF340049366E /* SNeon.swift in Sources */,
+				F4FD0C6C23548AEF002C1B03 /* STagLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
