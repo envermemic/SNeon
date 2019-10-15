@@ -14,7 +14,7 @@ public class STagLabel: UIView {
     private var iconView = UIImageView()
     private var contentView = UIView()
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         self.frame.size.height = 36
         addSubview(contentView)
