@@ -96,7 +96,7 @@ public extension UIView {
                 var rowH: CGFloat = 0
                 let rowInset = (width - offset * 2 - row.0) / CGFloat(row.1.count - 1)
                 for item in row.1 {
-                    item.onCorner(from, xp: x, yp: y)
+                    item.toCorner(from, xp: x, yp: y)
                     if rowH < item.height { rowH = item.height }
                     x += item.width + rowInset
                 }
