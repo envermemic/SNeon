@@ -75,7 +75,7 @@ public class STagLabel: UIView {
     /// Setup and configure icon
     /// - Parameter tintColor: tintColor UIColor or nil for reset
     /// - Parameter imageName: name: String or nil for reset
-    func setIcon(tintColor: UIColor?, imageName: String?) {
+    public func setIcon(tintColor: UIColor?, imageName: String?) {
         if let name = imageName {
             if iconView.superview == nil { contentView.addSubview(iconView) }
             if let color = tintColor {
