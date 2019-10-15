@@ -107,13 +107,13 @@ public class STagLabel: UIView {
             if let text = title {
                 right += 2
                 let txt = text.width(font: label.font)
-                label.toSide(.right, pad: right, w: txt + 4, h: 24)
+                label.to_side(.right, pad: right, w: txt + 4, h: 24)
                 right += label.width + 6
             }
         }
         
         if iconView.superview != nil {
-            iconView.toSide(.right, pad: right, w: 24, h: 24)
+            iconView.to_side(.right, pad: right, w: 24, h: 24)
             right += 26
         }
         

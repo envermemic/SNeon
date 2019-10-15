@@ -16,7 +16,7 @@ public extension UIView {
     /// weight and height will be seted manual if different of zero
     /// by defaault weight and height will be used from self frame
     /// if the weight or height bigger than superview param, it will be inherited from superview
-    func toCenter(w: CGFloat = 0, h: CGFloat = 0) {
+    func on_center(w: CGFloat = 0, h: CGFloat = 0) {
         if let superview = superview {
             let width: CGFloat = w > superview.width ? superview.width : w != 0 ? w : frame.size.width
             let height: CGFloat = h > superview.height ? superview.height : h != 0 ? h : frame.size.height
@@ -35,7 +35,7 @@ public extension UIView {
     /// - Parameter pad: CGFloat
     /// - Parameter w: CGFloat
     /// - Parameter h: CGFloat
-    func toSide(_ edge: Edge, pad: CGFloat = 0, w: CGFloat = 0, h: CGFloat = 0) {
+    func to_side(_ edge: Edge, pad: CGFloat = 0, w: CGFloat = 0, h: CGFloat = 0) {
         if let superview = superview {
             var padding = pad
             let width: CGFloat = w > superview.width ? superview.width : w != 0 ? w : frame.size.width
@@ -58,7 +58,7 @@ public extension UIView {
     /// - Parameter yp:
     /// - Parameter w:
     /// - Parameter h:
-    func toCorner(_ corner: Corner, xp: CGFloat = 0, yp: CGFloat = 0, w: CGFloat = 0, h: CGFloat = 0) {
+    func in_corner(_ corner: Corner, xp: CGFloat = 0, yp: CGFloat = 0, w: CGFloat = 0, h: CGFloat = 0) {
         if let superview = superview {
             var xPadding = xp, yPadding = yp
             let width = w > superview.width ? superview.width : w != 0 ? w : frame.size.width
@@ -96,7 +96,7 @@ public extension UIView {
                 var rowH: CGFloat = 0
                 let rowInset = (width - offset * 2 - row.0) / CGFloat(row.1.count - 1)
                 for item in row.1 {
-                    item.toCorner(from, xp: x, yp: y)
+                    item.in_corner(from, xp: x, yp: y)
                     if rowH < item.height { rowH = item.height }
                     x += item.width + rowInset
                 }
