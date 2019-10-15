@@ -98,10 +98,10 @@
 		F439C0E4234FBA860049366E /* SNeon */ = {
 			isa = PBXGroup;
 			children = (
-				F4FD0C6A23548AB4002C1B03 /* SComponents */,
 				F439C0E5234FBA860049366E /* SNeon.h */,
 				F439C0E6234FBA860049366E /* Info.plist */,
 				F439C0FC234FBF340049366E /* SNeon.swift */,
+				F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */,
 			);
 			path = SNeon;
 			sourceTree = "<group>";
@@ -113,14 +113,6 @@
 				F439C0F2234FBA870049366E /* Info.plist */,
 			);
 			path = SNeonTests;
-			sourceTree = "<group>";
-		};
-		F4FD0C6A23548AB4002C1B03 /* SComponents */ = {
-			isa = PBXGroup;
-			children = (
-				F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */,
-			);
-			path = SComponents;
 			sourceTree = "<group>";
 		};
 		F70B531CFEEBC818977D96AF /* Frameworks */ = {
