@@ -113,7 +113,7 @@ public class STagLabel: UIView {
         }
         
         if iconView.superview != nil {
-            iconView.to_side(.right, pad: right, w: 24, h: 24)
+            iconView.to_side(.left, pad: right, w: 24, h: 24)
             right += 26
         }
         
