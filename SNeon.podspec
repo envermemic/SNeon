@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
  spec.homepage      = "https://github.com/envermemic"
  spec.license       = "MIT"
  spec.author        = { "Enver" => "enver.memic80@gmail.com" }
- spec.platform      = :ios, "12.0"
+ spec.platform      = :ios, "11.2"
  spec.source        = { :git => "https://github.com/envermemic/SNeon.git" }
  spec.source_files  = "SNeon"
  spec.dependency 'Neon'
