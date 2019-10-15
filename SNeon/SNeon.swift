@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Neon
 
-extension UIView {
+public extension UIView {
     
     /// set view on center on superview using classic neon
     /// weight and height will be seted manual if different of zero
@@ -107,7 +107,7 @@ extension UIView {
     }
 }
 
-enum Pol {
+public enum Pol {
     case horizontal
     case vertical
 }
