@@ -11,4 +11,5 @@ Pod::Spec.new do |spec|
  spec.source        = { :git => "https://github.com/envermemic/SNeon.git" }
  spec.source_files  = "SNeon"
  spec.dependency 'Neon'
+ spec.dependency 'MaterialComponents/Buttons'
 end
