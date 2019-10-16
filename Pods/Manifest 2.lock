@@ -1,0 +1,60 @@
+PODS:
+  - MaterialComponents/AnimationTiming (92.3.1)
+  - MaterialComponents/Buttons (92.3.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Elevation (92.3.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (92.3.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (92.3.1)
+  - MaterialComponents/private/Color (92.3.1)
+  - MaterialComponents/private/Math (92.3.1)
+  - MaterialComponents/Ripple (92.3.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (92.3.1)
+  - MaterialComponents/ShadowLayer (92.3.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (92.3.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Typography (92.3.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+  - Neon (0.4.0)
+
+DEPENDENCIES:
+  - MaterialComponents/Buttons
+  - Neon
+
+SPEC REPOS:
+  trunk:
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - Neon
+
+SPEC CHECKSUMS:
+  MaterialComponents: 81dd553fe0d41647210843c7f3ba3cdedd2a5522
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
+
+PODFILE CHECKSUM: 23c5037a64abdc8d533f84832c30f54f426f8da3
+
+COCOAPODS: 1.8.3
