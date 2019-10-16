@@ -12,6 +12,16 @@ import MaterialComponents
 
 public protocol SButtonDelegate { func s_button_did_tap() }
 
+
+/// Use for components with content
+/// for resize by content or fix size
+public enum FLType {
+    /// flexibile by title
+    case fl
+    /// fixed
+    case fx
+}
+
 public class SButton: UIView {
     
     enum FLType {
@@ -20,6 +30,7 @@ public class SButton: UIView {
         /// fixed
         case fx
     }
+    
     public var delegate: SButtonDelegate?
     private var flType: FLType = .fl
     private var btnTitle: String = ""
