@@ -19,6 +19,12 @@
 #import "MDCFloatingButton+Animation.h"
 #import "MDCFloatingButton.h"
 #import "MDCRaisedButton.h"
+#import "MaterialButtons+ColorThemer.h"
+#import "MDCButtonColorThemer.h"
+#import "MDCContainedButtonColorThemer.h"
+#import "MDCFloatingButtonColorThemer.h"
+#import "MDCOutlinedButtonColorThemer.h"
+#import "MDCTextButtonColorThemer.h"
 #import "MaterialElevation.h"
 #import "MDCElevatable.h"
 #import "MDCElevationOverriding.h"
@@ -59,6 +65,11 @@
 #import "UIColor+MaterialDynamic.h"
 #import "MaterialMath.h"
 #import "MDCMath.h"
+#import "MaterialColorScheme.h"
+#import "MDCLegacyColorScheme.h"
+#import "MDCLegacyTonalColorScheme.h"
+#import "MDCLegacyTonalPalette.h"
+#import "MDCSemanticColorScheme.h"
 
 FOUNDATION_EXPORT double MaterialComponentsVersionNumber;
 FOUNDATION_EXPORT const unsigned char MaterialComponentsVersionString[];

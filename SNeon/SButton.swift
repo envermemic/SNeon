@@ -9,6 +9,7 @@
 import UIKit
 import Neon
 import MaterialComponents
+import MaterialComponents.MaterialButtons_ColorThemer
 
 public protocol SButtonDelegate { func s_button_did_tap() }
 
@@ -32,11 +33,16 @@ public enum Pos {
     case center
 }
 
-
+/// CUSTOM  COMPONENT **Sbutton** created by Enver Memic
+/// is Swift UI button Component with multiple possibilities.
+/// The component has title **UILabel**, and icon **UIIMageView**
+///
+///
 public class SButton: UIView {
     
     private let off: CGFloat = 12
     private let ins: CGFloat = 8
+    fileprivate let colorScheme = MDCSemanticColorScheme()
     
     enum SButtonKind {
         case icon
@@ -49,18 +55,18 @@ public class SButton: UIView {
     // BASE ATTRIBUTTES
     
     ///
-    private var btnTitle: String?	
+    private var btnTitle: String?
     
     ///
     private var iconName: String?
     
-    /// 
+    ///
     private var mdcButton = MDCButton()
     
     ///
     private var lb = UILabel()
     
-    /// 
+    ///
     private var iv = UIImageView()
        
     /// button instance identifier
@@ -98,6 +104,7 @@ public class SButton: UIView {
         super.init(frame: CGRect.zero)
         self.vibration = vibration
         mdcButton.setTitle("", for: .normal)
+        self.mdcButton.backgroundColor = .clear
         if withBlink { mdcButton.enableRippleBehavior = false }
         mdcButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
         self.clipsToBounds = true
@@ -153,7 +160,12 @@ public class SButton: UIView {
     /// title position set and get
     public var group: Pos {
         get { return groupTo }
-        set { self.groupTo = newValue; layout() }
+        set {
+            self.groupTo = newValue
+            if newValue == .right { lb.textAlignment = .right }
+            else { lb.textAlignment = .left }
+            layout()
+        }
     }
     
     // =============================  CONFIG FUNCTIONS  ============================
@@ -172,13 +184,16 @@ public class SButton: UIView {
             if self.iv.superview != nil { iv.removeFromSuperview() }
             self.kind = btnTitle != nil ? .title : .none
         }
-    } 
+    }
     
     ///
     private func titleDidSet() {
         if let title = btnTitle {
+            let txt = upprcassed ? title.uppercased() : title
+            let txtWidth = txt.width(font: lb.font)
+            lb.frame.size.width = txtWidth
             if lb.superview == nil { addSubview(lb) }
-            lb.text = upprcassed ? title.uppercased() : title
+            lb.text = txt
             self.kind = iconName != nil ? .combo : .title
         } else {
             if self.lb.superview != nil { lb.removeFromSuperview() }
@@ -194,15 +209,28 @@ public class SButton: UIView {
     // =============================  SET FUNCTIONS  ===========================
     
     public func defaultSet() {
+        lb.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        lb.frame.size.height = 24
+        iv.frame.size.height = 24
+        iv.frame.size.width = 24
         frame.size.width = 48
         frame.size.height = 48
         self.lb.textColor = .black
         self.iv.tintColor = .black
         self.backgroundColor = .white
         self.layer.cornerRadius = 0
-        self.layer.borderColor = nil
+        self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 0
+        mdcColors(textColor: .black, buttonColor: .clear)
         layout()
+    }
+    
+    private func mdcColors(textColor: UIColor? = nil, buttonColor: UIColor? = nil) {
+        if let tc = textColor { colorScheme.onPrimaryColor = tc }
+        if let bc = buttonColor { colorScheme.primaryColor = bc }
+        if textColor != nil || buttonColor != nil {
+            MDCContainedButtonColorThemer.applySemanticColorScheme(colorScheme, to: mdcButton)
+        }
     }
     
     public func set(titleColor: UIColor? = nil,
@@ -226,12 +254,13 @@ public class SButton: UIView {
         
         func setupRadius(radius: CGFloat) {
             self.radius = radius < 0 ? -1 : radius > frame.height / 2 ? frame.height / 2 : radius
-            self.layer.cornerRadius = self.radius
+            if self.radius < 0 { self.layer.cornerRadius = frame.height / 2 }
+            else { self.layer.cornerRadius = self.radius }
         }
         
         if let width = w { flType = .fx; frame.size.width = width } else { widthByText() }
         if let height = h { frame.size.height = height } else { frame.size.height = 48 }
-        if let titleColor = titleColor { self.lb.textColor = titleColor }
+        if let titleColor = titleColor { self.lb.textColor = titleColor; mdcColors(textColor: titleColor) }
         if let tintColor = tintColor { self.iv.tintColor = tintColor }
         if let background = backgroundColor { self.backgroundColor = background }
         if let rad = radius { setupRadius(radius: rad) }
@@ -275,10 +304,11 @@ public class SButton: UIView {
             offs += item.width + ins
         }
         // calculate flexibile size
-        if flType == .fl { frame.size.width = offs - ins + off }
+        if flType == .fl { frame.size.width = offs + off - ins - 6 }
         // mdc button layout
         mdcButton.fillSuperview()
+        
+        if self.radius < 0 { self.layer.cornerRadius = frame.height / 2 }
+        else { self.layer.cornerRadius = self.radius }
     }
 }
-
-

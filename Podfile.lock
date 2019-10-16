@@ -11,6 +11,9 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
+  - "MaterialComponents/Buttons+ColorThemer (92.3.1)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Color
   - MaterialComponents/Elevation (92.3.1):
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
@@ -24,6 +27,8 @@ PODS:
     - MaterialComponents/AnimationTiming
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
+  - MaterialComponents/schemes/Color (92.3.1):
+    - MaterialComponents/private/Color
   - MaterialComponents/ShadowElevations (92.3.1)
   - MaterialComponents/ShadowLayer (92.3.1):
     - MaterialComponents/ShadowElevations
@@ -40,6 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - MaterialComponents/Buttons
+  - "MaterialComponents/Buttons+ColorThemer"
   - Neon
 
 SPEC REPOS:
@@ -55,6 +61,6 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
 
-PODFILE CHECKSUM: cd3ac127009c7fbbe7dce9d0fbfa489b54c55990
+PODFILE CHECKSUM: 15320a1768482842600b8273d14f2075219c7e06
 
 COCOAPODS: 1.8.3
