@@ -103,9 +103,10 @@ public class SButton: UIView {
     public init(_ withBlink: Bool = false, vibration: Vibr? = nil) {
         super.init(frame: CGRect.zero)
         self.vibration = vibration
+        lb.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         mdcButton.setTitle("", for: .normal)
         self.mdcButton.backgroundColor = .clear
-        if withBlink { mdcButton.enableRippleBehavior = false }
+        mdcButton.enableRippleBehavior = withBlink
         mdcButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
         self.clipsToBounds = true
         addSubview(mdcButton)
@@ -209,7 +210,6 @@ public class SButton: UIView {
     // =============================  SET FUNCTIONS  ===========================
     
     public func defaultSet() {
-        lb.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         lb.frame.size.height = 24
         iv.frame.size.height = 24
         iv.frame.size.width = 24
@@ -244,9 +244,20 @@ public class SButton: UIView {
         
         func widthByText() {
             flType = .fl
+            labelWidth()
+        }
+        
+        func widthManual(w: CGFloat) {
+            flType = .fx
+            frame.size.width = w
+            labelWidth()
+        }
+        
+        func labelWidth() {
             lb.frame.size.width = 24
             if let txt = btnTitle {
-                let textW: CGFloat = txt.width(font: lb.font)
+                var textW: CGFloat = txt.width(font: lb.font)
+                if textW > 70 { textW = textW * 1.1 }
                 lb.frame.size.width += textW
             }
             lb.frame.size.height = 24
@@ -258,7 +269,7 @@ public class SButton: UIView {
             else { self.layer.cornerRadius = self.radius }
         }
         
-        if let width = w { flType = .fx; frame.size.width = width } else { widthByText() }
+        if let width = w { widthManual(w: width) } else { widthByText() }
         if let height = h { frame.size.height = height } else { frame.size.height = 48 }
         if let titleColor = titleColor { self.lb.textColor = titleColor; mdcColors(textColor: titleColor) }
         if let tintColor = tintColor { self.iv.tintColor = tintColor }
@@ -280,6 +291,7 @@ public class SButton: UIView {
     @objc private func didTap() {
         AsyncUtl.del(0.1) { self.vibration?.vibrate() }
         delegate?.s_button_did_tap()
+        print("Did Tap")
     }
     
     /// component layout
@@ -305,10 +317,11 @@ public class SButton: UIView {
         }
         // calculate flexibile size
         if flType == .fl { frame.size.width = offs + off - ins - 6 }
-        // mdc button layout
-        mdcButton.fillSuperview()
         
         if self.radius < 0 { self.layer.cornerRadius = frame.height / 2 }
         else { self.layer.cornerRadius = self.radius }
+        
+        // mdc button layout
+        mdcButton.fillSuperview()
     }
 }
