@@ -24,13 +24,6 @@ public enum FLType {
 
 public class SButton: UIView {
     
-    enum FLType {
-        /// flexibile by title
-        case fl
-        /// fixed
-        case fx
-    }
-    
     public var delegate: SButtonDelegate?
     private var flType: FLType = .fl
     private var btnTitle: String = ""
@@ -39,6 +32,7 @@ public class SButton: UIView {
     private var vibration: Vibr?
     private var mdcButton = MDCButton()
     
+    ///
     public init(_ withBlink: Bool = false, vibration: Vibr? = nil) {
         super.init(frame: CGRect.zero)
         self.vibration = vibration
@@ -50,8 +44,10 @@ public class SButton: UIView {
         addSubview(mdcButton)
     }
     
+    ///
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
+    ///
     public override func layoutSubviews() {
         super.layoutSubviews()
         self.layout()
