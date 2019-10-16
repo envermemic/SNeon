@@ -1,4 +1,4 @@
-platform :ios, '12.0'
+platform :ios, '11.2'
 target 'SNeon' do
   use_frameworks!
   pod 'Neon'
