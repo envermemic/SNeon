@@ -41,8 +41,8 @@ public extension UIView {
             let width: CGFloat = w > superview.width ? superview.width : w != 0 ? w : frame.size.width
             let height: CGFloat = h > superview.height ? superview.height : h != 0 ? h : frame.size.height
             switch edge {
-            case .bottom, .top: if width + pad > superview.width { padding = superview.width - width }
-            case .left, .right: if height + pad > superview.height { padding = superview.height - height }
+            case .left, .right: if width + pad > superview.width { padding = superview.width - width }
+            case .bottom, .top: if height + pad > superview.height { padding = superview.height - height }
             }
             anchorToEdge(edge, padding: padding, width: width, height: height)
         }
