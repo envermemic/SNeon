@@ -70,7 +70,7 @@ public class SButton: UIView {
     private var iv = UIImageView()
        
     /// button instance identifier
-    private var id = ""
+    var id = ""
     
     
     // CONFIGURATION
@@ -291,7 +291,6 @@ public class SButton: UIView {
     @objc private func didTap() {
         AsyncUtl.del(0.1) { self.vibration?.vibrate() }
         delegate?.s_button_did_tap()
-        print("Did Tap")
     }
     
     /// component layout
