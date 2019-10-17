@@ -314,7 +314,7 @@ public class SButton: UIView {
     /// selector action function
     @objc private func didTap() {
         AsyncUtl.del(0.1) { self.vibration?.vibrate() }
-        delegate?.s_button_did_tap(id: self.id)
+        AsyncUtl.del(0.2) { self.delegate?.s_button_did_tap(id: self.id) }
     }
     
     /// component layout
