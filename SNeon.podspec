@@ -10,6 +10,7 @@ Pod::Spec.new do |spec|
  spec.platform      = :ios, "11.2"
  spec.source        = { :git => "https://github.com/envermemic/SNeon.git" }
  spec.source_files  = "SNeon"
+ spec.resources     = "SNeon/Media.xcassets"
  
  spec.dependency 'MaterialComponents/Buttons+ColorThemer'
  spec.dependency 'MaterialComponents/Buttons'
