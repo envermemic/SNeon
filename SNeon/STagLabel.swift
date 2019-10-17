@@ -140,7 +140,6 @@ extension String {
         return ceil(boundingBox.width)
     }
     
-    
     func width(font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: font.capHeight)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
