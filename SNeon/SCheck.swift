@@ -17,8 +17,8 @@ public class SCheck: UIButton {
     var delegate: SCheckDelegate?
     
     private var isCheckedChecker: Bool
-    private var inactiveTintColor: UIColor = UIColor(red: 101, green: 101, blue: 101, alpha: 1)
-    private var activeTintColor: UIColor = UIColor(red: 48, green: 79, blue: 254, alpha: 1)
+    private var inactiveTintColor: UIColor = UIColor(red: 101/255, green: 101/255, blue: 101/255, alpha: 1.0)
+    private var activeTintColor: UIColor = UIColor(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
     private var identifier: String
     
     public init(isChecked: Bool = false, id: String = UUID().uuidString, actColor: UIColor? = nil, inactColor: UIColor? = nil) {
