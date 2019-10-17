@@ -70,7 +70,7 @@ public class SButton: UIView {
     private var iv = UIImageView()
        
     /// button instance identifier
-    var id = ""
+    public var id = ""
     
     
     // CONFIGURATION
