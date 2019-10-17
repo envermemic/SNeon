@@ -11,7 +11,7 @@ import Neon
 import MaterialComponents
 import MaterialComponents.MaterialButtons_ColorThemer
 
-public protocol SButtonDelegate { func s_button_did_tap() }
+public protocol SButtonDelegate { func s_button_did_tap(id: String) }
 
 /// Use for components with content
 /// for resize by content or fix size
@@ -40,8 +40,6 @@ public enum Pos {
 ///
 public class SButton: UIView {
     
-    private let off: CGFloat = 12
-    private let ins: CGFloat = 8
     fileprivate let colorScheme = MDCSemanticColorScheme()
     
     enum SButtonKind {
@@ -90,6 +88,12 @@ public class SButton: UIView {
     ///
     private var groupTo: Pos = .left
     
+    ///
+    private var off: CGFloat = 12
+    
+    ///
+    private var ins: CGFloat = 8
+    
     // OPTIONS
     
     ///
@@ -103,6 +107,7 @@ public class SButton: UIView {
     public init(_ withBlink: Bool = false, vibration: Vibr? = nil) {
         super.init(frame: CGRect.zero)
         self.vibration = vibration
+        iv.contentMode = .scaleAspectFill
         lb.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         mdcButton.setTitle("", for: .normal)
         self.mdcButton.backgroundColor = .clear
@@ -144,6 +149,20 @@ public class SButton: UIView {
     /// - Parameter withRenderingMode: rendering mode by default **.alwaysOriginal**
     public func setIcon(icon: String?, withRenderingMode: UIImage.RenderingMode = .alwaysOriginal) {
         self.iconName = icon; iconDidSet(withRenderingMode); layout()
+    }
+    
+    /// set image on image view
+    public func image(_ image: UIImage?) {
+        self.iv.image = image
+        if image != nil {
+            iconName = ".jpg"
+            if self.iv.superview == nil { addSubview(iv) }
+            self.kind = btnTitle != nil ? .combo : .icon
+            layout()
+        } else {
+            if self.iv.superview != nil { iv.removeFromSuperview() }
+            self.kind = btnTitle != nil ? .title : .none
+        }
     }
     
     /// vibration when click
@@ -191,7 +210,7 @@ public class SButton: UIView {
     private func titleDidSet() {
         if let title = btnTitle {
             let txt = upprcassed ? title.uppercased() : title
-            let txtWidth = txt.width(font: lb.font)
+            let txtWidth = txt.width(font: lb.font) * 1.3
             lb.frame.size.width = txtWidth
             if lb.superview == nil { addSubview(lb) }
             lb.text = txt
@@ -240,7 +259,10 @@ public class SButton: UIView {
                     borderColor: UIColor? = nil,
                     borderWidth: CGFloat? = nil,
                     w: CGFloat? = nil,
-                    h: CGFloat? = nil) {
+                    h: CGFloat? = nil,
+                    fixIconSize: CGSize? = nil,
+                    xOffset: CGFloat? = nil,
+                    xInset: CGFloat? = nil) {
         
         func widthByText() {
             flType = .fl
@@ -256,9 +278,8 @@ public class SButton: UIView {
         func labelWidth() {
             lb.frame.size.width = 24
             if let txt = btnTitle {
-                var textW: CGFloat = txt.width(font: lb.font)
-                if textW > 70 { textW = textW * 1.1 }
-                lb.frame.size.width += textW
+                let textW: CGFloat = txt.width(font: lb.font) * 1.3
+                lb.frame.size.width = textW
             }
             lb.frame.size.height = 24
         }
@@ -277,6 +298,9 @@ public class SButton: UIView {
         if let rad = radius { setupRadius(radius: rad) }
         if let borderC = borderColor { self.layer.borderColor = borderC.cgColor }
         if let borderW = borderWidth { self.layer.borderWidth = borderW }
+        if let sz = fixIconSize { iv.frame.size = sz }
+        if let o = xOffset { self.off = o }
+        if let i = xInset { self.ins = i }
         layout()
     }
     
@@ -290,7 +314,7 @@ public class SButton: UIView {
     /// selector action function
     @objc private func didTap() {
         AsyncUtl.del(0.1) { self.vibration?.vibrate() }
-        delegate?.s_button_did_tap()
+        delegate?.s_button_did_tap(id: self.id)
     }
     
     /// component layout
@@ -298,8 +322,8 @@ public class SButton: UIView {
         
         // calculate place for subcomponents
         func place() -> CGFloat {
-            if kind == .combo { return 24 + ins + lb.width }
-            else if kind == .title { return lb.width }
+            if kind == .combo { return 24 + ins + lb.frame.width }
+            else if kind == .title { return lb.frame.width }
             return 24
         }
         
@@ -312,7 +336,7 @@ public class SButton: UIView {
         // set items
         for item in items {
             item.to_side(edge, pad: offs)
-            offs += item.width + ins
+            offs += item.frame.width + ins
         }
         // calculate flexibile size
         if flType == .fl { frame.size.width = offs + off - ins - 6 }
@@ -324,3 +348,4 @@ public class SButton: UIView {
         mdcButton.fillSuperview()
     }
 }
+
