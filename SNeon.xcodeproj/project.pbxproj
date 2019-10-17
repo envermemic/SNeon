@@ -15,6 +15,8 @@
 		F439C0FD234FBF340049366E /* SNeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439C0FC234FBF340049366E /* SNeon.swift */; };
 		F448ADA323560BDC001E82B8 /* SButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448ADA223560BDC001E82B8 /* SButton.swift */; };
 		F49DFB182357059300AC396D /* Vibr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DFB172357059300AC396D /* Vibr.swift */; };
+		F4AC1B432358BA110059B332 /* SCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC1B422358BA110059B332 /* SCheck.swift */; };
+		F4AC1B452358BD5D0059B332 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AC1B442358BD5D0059B332 /* Media.xcassets */; };
 		F4FD0C6C23548AEF002C1B03 /* STagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		F439C0FC234FBF340049366E /* SNeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNeon.swift; sourceTree = "<group>"; };
 		F448ADA223560BDC001E82B8 /* SButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SButton.swift; sourceTree = "<group>"; };
 		F49DFB172357059300AC396D /* Vibr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibr.swift; sourceTree = "<group>"; };
+		F4AC1B422358BA110059B332 /* SCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCheck.swift; sourceTree = "<group>"; };
+		F4AC1B442358BD5D0059B332 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STagLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +121,8 @@
 				F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */,
 				F448ADA223560BDC001E82B8 /* SButton.swift */,
 				F49DFB172357059300AC396D /* Vibr.swift */,
+				F4AC1B422358BA110059B332 /* SCheck.swift */,
+				F4AC1B442358BD5D0059B332 /* Media.xcassets */,
 			);
 			path = SNeon;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4AC1B452358BD5D0059B332 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +316,7 @@
 			files = (
 				F49DFB182357059300AC396D /* Vibr.swift in Sources */,
 				F439C0FD234FBF340049366E /* SNeon.swift in Sources */,
+				F4AC1B432358BA110059B332 /* SCheck.swift in Sources */,
 				F4FD0C6C23548AEF002C1B03 /* STagLabel.swift in Sources */,
 				F448ADA323560BDC001E82B8 /* SButton.swift in Sources */,
 			);
