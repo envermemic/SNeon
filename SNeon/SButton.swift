@@ -97,6 +97,31 @@ public class SButton: UIView {
     ///
     private var blockedClick = false
     
+    ///
+    private var backgroundColorOrigin: UIColor = UIColor.white
+    
+    ///
+    private var textColorOrigin: UIColor = UIColor.black
+    
+    ///
+    private var tintColorOrigin: UIColor = UIColor.black
+    
+    ///
+    private var backgroundColorDisable: UIColor = UIColor.white.withAlphaComponent(0.54)
+    
+    ///
+    private var textColorDisable: UIColor = UIColor.black.withAlphaComponent(0.54)
+    
+    ///
+    private var tintColorDisable: UIColor = UIColor.black.withAlphaComponent(0.54)
+    
+    ///
+    private var enabled = true
+    
+    ///
+    private var borderWidth: CGFloat = 0
+    
+    
     // OPTIONS
     
     ///
@@ -132,6 +157,11 @@ public class SButton: UIView {
     
     
     // =======================  GETTERS AND SETTERS  =============================
+    
+    public var isEnabled: Bool {
+        get { return enabled }
+        set { self.enabled = newValue; self.enableDidSet() }
+    }
     
     /// button title value, getter and setter
     public var title: String? {
@@ -225,6 +255,20 @@ public class SButton: UIView {
         }
     }
     
+    private func enableDidSet() {
+        mdcButton.isEnabled = self.enabled
+        mdcButton.enableRippleBehavior = self.enabled
+        resetColors()
+    }
+    
+    private func resetColors() {
+        self.lb.textColor = enabled ? textColorOrigin : textColorDisable
+        self.iv.tintColor = enabled ? tintColorOrigin : tintColorDisable
+        self.backgroundColor = enabled ? backgroundColorOrigin : backgroundColorDisable
+        self.layer.borderWidth = enabled ? self.borderWidth : 0
+        self.mdcColors(textColor: enabled ? tintColorOrigin : tintColorDisable)
+    }
+    
     ///
     private func uppercassedDidSet() { if btnTitle != nil { titleDidSet() }}
     
@@ -237,9 +281,9 @@ public class SButton: UIView {
         iv.frame.size.width = 24
         frame.size.width = 48
         frame.size.height = 48
-        self.lb.textColor = .black
-        self.iv.tintColor = .black
-        self.backgroundColor = .white
+        self.lb.textColor = textColorOrigin
+        self.iv.tintColor = tintColorOrigin
+        self.backgroundColor = backgroundColorOrigin
         self.layer.cornerRadius = 0
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 0
@@ -295,16 +339,53 @@ public class SButton: UIView {
         
         if let width = w { widthManual(w: width) } else { widthByText() }
         if let height = h { frame.size.height = height } else { frame.size.height = 48 }
-        if let titleColor = titleColor { self.lb.textColor = titleColor; mdcColors(textColor: titleColor) }
-        if let tintColor = tintColor { self.iv.tintColor = tintColor }
-        if let background = backgroundColor { self.backgroundColor = background }
+        
+        if let titleColor = titleColor {
+            self.textColorOrigin = titleColor
+            self.textColorDisable = titleColor.withAlphaComponent(0.54)
+        }
+        
+        if let tintColor = tintColor {
+            self.tintColorOrigin = tintColor
+            self.tintColorDisable = tintColor.withAlphaComponent(0.54)
+            self.iv.tintColor = tintColor
+            
+        }
+        
+        if let background = backgroundColor {
+            self.backgroundColorOrigin = background
+            self.backgroundColorDisable = background.withAlphaComponent(0.54)
+        }
+        
         if let rad = radius { setupRadius(radius: rad) }
         if let borderC = borderColor { self.layer.borderColor = borderC.cgColor }
-        if let borderW = borderWidth { self.layer.borderWidth = borderW }
+        if let borderW = borderWidth { self.layer.borderWidth = borderW; self.borderWidth = borderW }
         if let sz = fixIconSize { iv.frame.size = sz }
         if let o = xOffset { self.off = o }
         if let i = xInset { self.ins = i }
+        resetColors()
         layout()
+    }
+    
+    /// Postavljanje specificnih color parametara za odnos enable disable
+    /// Moguce je postaviti sva tri osnovna color parametra (text color, tint color, background color) zasebno
+    /// ukljucujuci i za enable i za disable rezim
+    /// - Parameter title: title color for enable                       *UIColor*
+    /// - Parameter titleDis: title color for disable                *UIColor*
+    /// - Parameter tint: tint color for enable                          *UIColor*
+    /// - Parameter tintDis: tint color for disable                   *UIColor*
+    /// - Parameter bckg: background color for enable            *UIColor*
+    /// - Parameter bckgDis: background color for disable     *UIColor*
+    public func specificColorScheme(title: UIColor? = nil, titleDis: UIColor? = nil,
+                                    tint:UIColor? = nil, tintDis: UIColor? = nil,
+                                    bckg: UIColor? = nil, bckgDis: UIColor? = nil) {
+        if let t = title { self.textColorOrigin = t }
+        if let tDis = titleDis { self.textColorDisable = tDis }
+        if let tnt = tint { self.tintColorOrigin = tnt }
+        if let tntDis = tintDis { self.tintColorDisable = tntDis }
+        if let bck = bckg { self.backgroundColorOrigin = bck }
+        if let bckDis = bckgDis { self.backgroundColorDisable = bckDis }
+        resetColors()
     }
     
     /// add target to button
@@ -354,4 +435,5 @@ public class SButton: UIView {
         mdcButton.fillSuperview()
     }
 }
+
 
