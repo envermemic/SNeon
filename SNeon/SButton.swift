@@ -66,7 +66,7 @@ public class SButton: UIView {
     
     ///
     private var iv = UIImageView()
-       
+    
     /// button instance identifier
     public var id = ""
     
@@ -93,6 +93,9 @@ public class SButton: UIView {
     
     ///
     private var ins: CGFloat = 8
+    
+    ///
+    private var blockedClick = false
     
     // OPTIONS
     
@@ -313,8 +316,11 @@ public class SButton: UIView {
     
     /// selector action function
     @objc private func didTap() {
+        if blockedClick { return }
+        self.blockedClick = true
         AsyncUtl.del(0.1) { self.vibration?.vibrate() }
         AsyncUtl.del(0.2) { self.delegate?.s_button_did_tap(id: self.id) }
+        AsyncUtl.del(0.5) { self.blockedClick = false }
     }
     
     /// component layout
