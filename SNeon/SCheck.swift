@@ -61,9 +61,9 @@ public class SCheck: UIButton {
         set { inactiveTintColor = newValue; reset() }
     }
     
-    
     @objc private func didTapOnCheck() {
         self.isCheckedChecker = !self.isCheckedChecker
+        self.isCheckedChecker ? Vibr.success.vibrate() : Vibr.error.vibrate()
         self.reset()
         self.delegate?.didChange(id: self.identifier, isChecked: self.isCheckedChecker)
     }
