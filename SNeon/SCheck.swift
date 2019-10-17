@@ -14,7 +14,7 @@ public protocol SCheckDelegate: class {
 
 public class SCheck: UIButton {
     
-    var delegate: SCheckDelegate?
+    public var delegate: SCheckDelegate?
     
     private var isCheckedChecker: Bool
     private var inactiveTintColor: UIColor = UIColor(red: 101/255, green: 101/255, blue: 101/255, alpha: 1.0)
@@ -76,3 +76,4 @@ public class SCheck: UIButton {
     
     private var iconName: String { return isCheckedChecker ? "check-button-checked" : "check-button-unchecked" }
 }
+
