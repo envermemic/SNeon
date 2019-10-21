@@ -243,7 +243,7 @@ public class SButton: UIView {
     private func titleDidSet() {
         if let title = btnTitle {
             let txt = upprcassed ? title.uppercased() : title
-            let txtWidth = txt.width(font: lb.font) * 1.3
+            let txtWidth = txt.width(font: lb.font)
             lb.frame.size.width = txtWidth
             if lb.superview == nil { addSubview(lb) }
             lb.text = txt
@@ -324,8 +324,9 @@ public class SButton: UIView {
         
         func labelWidth() {
             lb.frame.size.width = 24
-            if let txt = btnTitle {
-                let textW: CGFloat = txt.width(font: lb.font) * 1.3
+            if var txt = btnTitle {
+                txt = upprcassed ? txt.uppercased() : txt
+                let textW: CGFloat = txt.width(font: lb.font)
                 lb.frame.size.width = textW
             }
             lb.frame.size.height = 24
@@ -426,7 +427,7 @@ public class SButton: UIView {
             offs += item.frame.width + ins
         }
         // calculate flexibile size
-        if flType == .fl { frame.size.width = offs + off - ins - 6 }
+        if flType == .fl { frame.size.width = offs + off - ins }
         
         if self.radius < 0 { self.layer.cornerRadius = frame.height / 2 }
         else { self.layer.cornerRadius = self.radius }
@@ -435,5 +436,6 @@ public class SButton: UIView {
         mdcButton.fillSuperview()
     }
 }
+
 
 
