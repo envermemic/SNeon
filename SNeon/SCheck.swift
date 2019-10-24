@@ -8,9 +8,7 @@
 
 import UIKit
 
-public protocol SCheckDelegate: class {
-    func didChange(id: String, isChecked: Bool)
-}
+public protocol SCheckDelegate: class { func didChange(id: String, isChecked: Bool) }
 
 public class SCheck: UIButton {
     
