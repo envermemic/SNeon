@@ -12,6 +12,38 @@ import Neon
 
 public extension UIView {
     
+    /// Rasporedjuje skupinu componenata horizontalno pocevsi od zadanog cornera prema dole
+    /// - Warning: Napravljeno je da radi samo od `top` prema `bottom` sto znaci da ce raditi
+    ///     ispravno samo ako dobije `topLeft` ili `topRight` corner.
+    /// - Parameter from: *Neon* corner od kog ce krenuti postvljati elemente
+    /// - Parameter subviews: Array subviews koji ce biti pozicionirani
+    /// - Parameter startX: x offset odakle ce krenuti postavljati elemente
+    /// - Parameter startY: y offset odakle ce krenuti postavljati elemente
+    /// - Parameter xPadd: padding po x osi (inset) izmedju elemenata
+    /// - Parameter yPadd: padding po y osi (inset) izmedju elemenata
+    /// - Parameter xMargin: margine sa strana po x osi `left` and right`
+    /// - Parameter yMargin: margine sa strana po y osi `top` and `bottom`
+    func subviewsFrom(from: Corner, subviews: [UIView], startX: CGFloat = 0, startY: CGFloat = 0,
+                      xPadd: CGFloat = 8, yPadd: CGFloat = 8, xMargin: CGFloat = 0, yMargin: CGFloat = 0) {
+        // dynamic x
+        var xOff: CGFloat = startX
+        // dynamic y
+        var yOff: CGFloat = startY
+        for subview in self.subviews {
+            // upravljati samo elementima koji su subviews ovog elementa
+            if self.subviews.contains(subview) {
+                // ako je subview veci od dozvoljenog prostora onda smanji subview
+                if subview.width > width - xMargin * 2 { subview.frame.size.width = width - xMargin * 2 }
+                // prelazak u drugi red ako je prethodni popunjen
+                if width - xOff - xMargin < subview.width { xOff = xMargin; yOff += subview.height + yPadd }
+                // pozicioniranje elementa
+                subview.anchorInCorner(from, xPad: xOff, yPad: yOff, width: subview.width, height: subview.height)
+                // oznacavanje prostora koji je zauzeo elemenat
+                xOff += subview.width + xPadd
+            }
+        }
+    }
+    
     /// set view on center on superview using classic neon
     /// weight and height will be seted manual if different of zero
     /// by defaault weight and height will be used from self frame
@@ -111,3 +143,4 @@ public enum Pol {
     case horizontal
     case vertical
 }
+
