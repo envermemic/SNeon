@@ -19,7 +19,8 @@ public enum Vibr {
     case heavy
     case selection
     case oldSchool
-    func vibrate() {
+    /// vibrate
+    public func vibrate() {
         switch self {
         case .error: UINotificationFeedbackGenerator().notificationOccurred(.error)
         case .success: UINotificationFeedbackGenerator().notificationOccurred(.success)
