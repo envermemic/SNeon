@@ -68,7 +68,7 @@ public class SButton: UIView {
     private var iv = UIImageView()
     
     /// button instance identifier
-    public var id = ""
+    public var id = UUID().uuidString
     
     
     // CONFIGURATION
@@ -130,6 +130,8 @@ public class SButton: UIView {
     ///
     public var delegate: SButtonDelegate?
     
+    ///
+    public var font: UIFont { return lb.font }
     
     ///
     public init(_ withBlink: Bool = false, vibration: Vibr? = nil) {
