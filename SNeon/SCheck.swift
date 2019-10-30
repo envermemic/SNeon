@@ -8,7 +8,9 @@
 
 import UIKit
 
-public protocol SCheckDelegate: class { func didChange(id: String, isChecked: Bool) }
+public protocol SCheckDelegate: class {
+    func didChange(id: String, isChecked: Bool)
+}
 
 public class SCheck: UIButton {
     
@@ -74,4 +76,3 @@ public class SCheck: UIButton {
     
     private var iconName: String { return isCheckedChecker ? "check-button-checked" : "check-button-unchecked" }
 }
-
