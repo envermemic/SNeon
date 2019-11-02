@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-enum iModel {
+public enum IModel {
     
     /// iPhone - s
     case iPhone_4_and_less
