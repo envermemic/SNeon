@@ -17,6 +17,7 @@
 		F49DFB182357059300AC396D /* Vibr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DFB172357059300AC396D /* Vibr.swift */; };
 		F4AC1B432358BA110059B332 /* SCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC1B422358BA110059B332 /* SCheck.swift */; };
 		F4AC1B452358BD5D0059B332 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AC1B442358BD5D0059B332 /* Media.xcassets */; };
+		F4AE0542236E300D00B99556 /* iModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE0541236E300D00B99556 /* iModel.swift */; };
 		F4FD0C6C23548AEF002C1B03 /* STagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */; };
 		F4FFD96F2359282D00D14BC9 /* SColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FFD96E2359282C00D14BC9 /* SColor.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		F49DFB172357059300AC396D /* Vibr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibr.swift; sourceTree = "<group>"; };
 		F4AC1B422358BA110059B332 /* SCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCheck.swift; sourceTree = "<group>"; };
 		F4AC1B442358BD5D0059B332 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		F4AE0541236E300D00B99556 /* iModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iModel.swift; sourceTree = "<group>"; };
 		F4FD0C6B23548AEF002C1B03 /* STagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STagLabel.swift; sourceTree = "<group>"; };
 		F4FFD96E2359282C00D14BC9 /* SColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				F49DFB172357059300AC396D /* Vibr.swift */,
 				F4AC1B422358BA110059B332 /* SCheck.swift */,
 				F4AC1B442358BD5D0059B332 /* Media.xcassets */,
+				F4AE0541236E300D00B99556 /* iModel.swift */,
 			);
 			path = SNeon;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				F49DFB182357059300AC396D /* Vibr.swift in Sources */,
 				F439C0FD234FBF340049366E /* SNeon.swift in Sources */,
 				F4AC1B432358BA110059B332 /* SCheck.swift in Sources */,
+				F4AE0542236E300D00B99556 /* iModel.swift in Sources */,
 				F4FFD96F2359282D00D14BC9 /* SColor.swift in Sources */,
 				F4FD0C6C23548AEF002C1B03 /* STagLabel.swift in Sources */,
 				F448ADA323560BDC001E82B8 /* SButton.swift in Sources */,
