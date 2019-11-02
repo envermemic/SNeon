@@ -85,7 +85,7 @@ public enum IModel {
     // 320 x 568 - 5, 5s, 5c, SE
     // 320 x 480 - 4, 4s, 2G, 3G, 3GS
     
-    public static var this: iModel {
+    public static var this: IModel {
         
         switch UIDevice.current.name {
         case "iPhone 11 Pro Max": return .iPhone_11_pro_max
@@ -187,24 +187,24 @@ public enum IModel {
     public var isPlus: Bool { return [.iPhone_6_s_plus, .iPhone_6_plus, .iPhone_7_plus, .iPhone_8_plus].contains(self) }
     
     /// is iphone (if width <= 414)
-    public var is_iPhone: Bool { return iModel.fixScreenW <= 414 }
+    public var is_iPhone: Bool { return IModel.fixScreenW <= 414 }
     
     /// is ipad (if width > 414)
-    public var is_iPad: Bool { return iModel.fixScreenW > 414 }
+    public var is_iPad: Bool { return IModel.fixScreenW > 414 }
     
     ///
     public var is_Watch: Bool {
         return [
-            iModel.Apple_Watch_38mm,
-            iModel.Apple_Watch_42mm,
-            iModel.Apple_Watch_Series_2_38mm,
-            iModel.Apple_Watch_Series_2_42mm,
-            iModel.Apple_Watch_Series_3_38mm,
-            iModel.Apple_Watch_Series_3_42mm,
-            iModel.Apple_Watch_Series_4_40mm,
-            iModel.Apple_Watch_Series_4_44mm,
-            iModel.Apple_Watch_Series_5_40mm,
-            iModel.Apple_Watch_Series_5_44mm
+            IModel.Apple_Watch_38mm,
+            IModel.Apple_Watch_42mm,
+            IModel.Apple_Watch_Series_2_38mm,
+            IModel.Apple_Watch_Series_2_42mm,
+            IModel.Apple_Watch_Series_3_38mm,
+            IModel.Apple_Watch_Series_3_42mm,
+            IModel.Apple_Watch_Series_4_40mm,
+            IModel.Apple_Watch_Series_4_44mm,
+            IModel.Apple_Watch_Series_5_40mm,
+            IModel.Apple_Watch_Series_5_44mm
             ].contains(self)
     }
     
