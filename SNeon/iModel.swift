@@ -143,7 +143,7 @@ public enum IModel {
         case "Apple Watch Series 4 - 44mm": return .Apple_Watch_Series_4_44mm
         case "Apple Watch Series 5 - 40mm": return .Apple_Watch_Series_5_40mm
         case "Apple Watch Series 5 - 44mm": return .Apple_Watch_Series_5_44mm
-                        
+            
         default:
             /// retuns unknown iphone by screen size
             if fixScreenW <= 414 && fixScreenH >= 300 { return unknown_iphone }
@@ -191,6 +191,9 @@ public enum IModel {
     
     /// is ipad (if width > 414)
     public var is_iPad: Bool { return IModel.fixScreenW > 414 }
+    
+    /// returns CGFloat 24 for devices with rounded display, and 8 for regular
+    public var bottom_8: CGFloat { return isRounded ? 24 : 8 }
     
     ///
     public var is_Watch: Bool {
