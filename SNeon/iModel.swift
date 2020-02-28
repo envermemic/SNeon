@@ -86,7 +86,6 @@ public enum IModel {
     // 320 x 480 - 4, 4s, 2G, 3G, 3GS
     
     public static var this: IModel {
-        
         switch UIDevice.modelName {
         case "iPhone 11 Pro Max": return .iPhone_11_pro_max
         case "iPhone 11 Pro":     return .iPhone_11_pro
@@ -131,7 +130,6 @@ public enum IModel {
         case "Apple TV":               return .Apple_TV
         case "Apple TV 4K":            return .Apple_TV_4K
         case "Apple TV 4K (at 1080p)": return .Apple_TV_4K_at_1080p
-            
             
         case "Apple Watch - 38mm":          return .Apple_Watch_38mm
         case "Apple Watch - 42mm":          return .Apple_Watch_42mm
@@ -232,7 +230,32 @@ public enum IModel {
 }
 
 public extension UIDevice {
-    static let modelName: String = {
+    ///
+    private static var isSim: Bool?
+    ///
+    private static var modelN: String?
+    /// returns device name as valid formatted name `iPhone 8 Plus` for simulator or device
+    static var modelName: String {
+        if let name = modelN { return name }
+        return model_name_conf.0
+    }
+    /// returns true if the device is simulator
+    static var isSimulator: Bool {
+        if let is_sim = isSim { return is_sim }
+        return model_name_conf.1
+    }
+    ///
+    private static var model_name_conf: (String, Bool) {
+        if model_name.contains("Simulator ") {
+            isSim = true
+            let name = model_name.replacingOccurrences(of: "Simulator ", with: "")
+            modelN = name
+            return (name, true)
+        }
+        else { return (model_name, false) }
+    }
+    ///
+    private static let model_name: String = {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)
