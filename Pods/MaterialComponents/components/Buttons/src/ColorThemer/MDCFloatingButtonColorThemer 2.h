@@ -15,28 +15,31 @@
 #import "MaterialButtons.h"
 #import "MaterialColorScheme.h"
 
+#import <Foundation/Foundation.h>
+
 /**
- The Material Design color system's outlined button themer for instances of MDCButton.
+ The Material Design color system's floating button themer for instances of MDCFloatingButton.
 
  @warning This API will eventually be deprecated. The replacement API is:
- `MDCButton`'s `-applyOutlinedThemeWithScheme:`
+ `MDCFloatingButton`'s `-applySecondaryThemeWithScheme:`
  Learn more at docs/theming.md#migration-guide-themers-to-theming-extensions
  */
-__deprecated_msg("Please use [MDCButton applyOutlinedThemeWithScheme:] instead. (Note: Color "
-                 "theming is no longer available as an independent API.")
-    @interface MDCOutlinedButtonColorThemer : NSObject
+@interface MDCFloatingButtonColorThemer : NSObject
+@end
+
+@interface MDCFloatingButtonColorThemer (ToBeDeprecated)
 
 /**
- Applies a color scheme's properties to an MDCButton using the outlined button style.
+ Applies a color scheme's properties to an MDCFloatingButton using the floating button style.
 
  @param colorScheme The color scheme to apply to the component instance.
  @param button A component instance to which the color scheme should be applied.
 
  @warning This API will eventually be deprecated. The replacement API is:
- `MDCButton`'s `-applyOutlinedThemeWithScheme:`
+ `MDCFloatingButton`'s `-applySecondaryThemeWithScheme:`
  Learn more at docs/theming.md#migration-guide-themers-to-theming-extensions
  */
 + (void)applySemanticColorScheme:(nonnull id<MDCColorScheming>)colorScheme
-                        toButton:(nonnull MDCButton *)button;
+                        toButton:(nonnull MDCFloatingButton *)button;
 
 @end

@@ -1,6 +1,7 @@
 PODS:
-  - MaterialComponents/AnimationTiming (92.3.1)
-  - MaterialComponents/Buttons (92.3.1):
+  - MaterialComponents/AnimationTiming (107.1.0)
+  - MaterialComponents/Availability (107.1.0)
+  - MaterialComponents/Buttons (107.1.0):
     - MaterialComponents/Elevation
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
@@ -11,32 +12,36 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - "MaterialComponents/Buttons+ColorThemer (92.3.1)":
+  - "MaterialComponents/Buttons+ColorThemer (107.1.0)":
     - MaterialComponents/Buttons
     - MaterialComponents/schemes/Color
-  - MaterialComponents/Elevation (92.3.1):
+  - MaterialComponents/Elevation (107.1.0):
+    - MaterialComponents/Availability
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - MaterialComponents/Ink (92.3.1):
+  - MaterialComponents/Ink (107.1.0):
+    - MaterialComponents/Availability
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - MaterialComponents/private/Application (92.3.1)
-  - MaterialComponents/private/Color (92.3.1)
-  - MaterialComponents/private/Math (92.3.1)
-  - MaterialComponents/Ripple (92.3.1):
+  - MaterialComponents/private/Application (107.1.0)
+  - MaterialComponents/private/Color (107.1.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Math (107.1.0)
+  - MaterialComponents/Ripple (107.1.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - MaterialComponents/schemes/Color (92.3.1):
+  - MaterialComponents/schemes/Color (107.1.0):
+    - MaterialComponents/Availability
     - MaterialComponents/private/Color
-  - MaterialComponents/ShadowElevations (92.3.1)
-  - MaterialComponents/ShadowLayer (92.3.1):
+  - MaterialComponents/ShadowElevations (107.1.0)
+  - MaterialComponents/ShadowLayer (107.1.0):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/Shapes (92.3.1):
+  - MaterialComponents/Shapes (107.1.0):
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/Typography (92.3.1):
+  - MaterialComponents/Typography (107.1.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
@@ -56,11 +61,11 @@ SPEC REPOS:
     - Neon
 
 SPEC CHECKSUMS:
-  MaterialComponents: 81dd553fe0d41647210843c7f3ba3cdedd2a5522
+  MaterialComponents: 12ba01c537f9728d9cd739c6c46888abce8198d4
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
 
 PODFILE CHECKSUM: 15320a1768482842600b8273d14f2075219c7e06
 
-COCOAPODS: 1.9.0.beta.3
+COCOAPODS: 1.9.0
